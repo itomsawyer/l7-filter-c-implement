@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	makefile	/^CC = gcc $/;"	m
+CFLAGS	makefile	/^CFLAGS = -g #-Wall$/;"	m
+CONNECTION_BUFF_LEN	nfct.h	11;"	d
+CONNECTION_KEY_LEN	nfct.h	10;"	d
+IDENTIFY_H	identify.h	2;"	d
+IDEN_NAME_LEN	identify.h	10;"	d
+IDEN_PATTERN_LEN	identify.h	11;"	d
+LIBS	makefile	/^LIBS = -lnfnetlink -lnetfilter_queue -lnetfilter_conntrack -lpthread$/;"	m
+NFCT_H	nfct.h	2;"	d
+NFCT_THREAD_H	nfct_thread.h	2;"	d
+NFQNL_THREAD_H	nfqnl_thread.h	2;"	d
+NO_MATCH	identify.h	8;"	d
+NO_MATCH_YET	identify.h	7;"	d
+OBJS	makefile	/^OBJS:= main.o nfqnl_thread.o  identify.o nfct.o nfct_thread.o$/;"	m
+STDXH_H	stdxh.h	2;"	d
+STR_LEN	identify.h	12;"	d
+UNTOUCHED	identify.h	6;"	d
+append_connection	nfct.c	/^int append_connection(struct conntrack *connt,struct connection *conn_node){$/;"	f	signature:(struct conntrack *connt,struct connection *conn_node)
+append_connection	nfct.h	/^int append_connection(struct conntrack *connt,struct connection *conn_node);$/;"	p	signature:(struct conntrack *connt,struct connection *conn_node)
+append_to_buffer	nfct.c	/^int append_to_buffer(struct connection * conn_node, $/;"	f	signature:(struct connection * conn_node, char * app_data, unsigned int appdatalen)
+append_to_buffer	nfct.h	/^int append_to_buffer(struct connection * conn_node, $/;"	p	signature:(struct connection * conn_node, char *app_data, unsigned int appdatalen)
+buffer	nfct.h	/^    char  buffer[CONNECTION_BUFF_LEN];$/;"	m	struct:connection	access:public
+cb	nfqnl_thread.h	/^static int cb(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg,$/;"	p	signature:(struct nfq_q_handle *qh, struct nfgenmsg *nfmsg, struct nfq_data *nfa, void *data)
+classify	identify.c	/^int classify(struct identifier *iden , int iden_num,const char *data ){$/;"	f	signature:(struct identifier *iden , int iden_num,const char *data )
+classify	identify.h	/^int classify(struct identifier * iden, int iden_num,const char * data);$/;"	p	signature:(struct identifier * iden, int iden_num,const char * data)
+clobbermark	nfqnl_thread.c	/^int clobbermark = 0;$/;"	v
+conn_list	nfct.h	/^    struct connection *conn_list;$/;"	m	struct:conntrack	typeref:struct:conntrack::connection	access:public
+connection	nfct.h	/^struct connection{$/;"	s
+connection::buffer	nfct.h	/^    char  buffer[CONNECTION_BUFF_LEN];$/;"	m	struct:connection	access:public
+connection::key	nfct.h	/^    char key[CONNECTION_KEY_LEN];$/;"	m	struct:connection	access:public
+connection::lengthsofar	nfct.h	/^    unsigned int lengthsofar;$/;"	m	struct:connection	access:public
+connection::mark	nfct.h	/^    unsigned int mark;$/;"	m	struct:connection	access:public
+connection::mutex_buffer	nfct.h	/^    pthread_mutex_t mutex_buffer;$/;"	m	struct:connection	access:public
+connection::mutex_num_packet	nfct.h	/^    pthread_mutex_t mutex_num_packet;$/;"	m	struct:connection	access:public
+connection::next	nfct.h	/^    struct connection * next; $/;"	m	struct:connection	typeref:struct:connection::connection	access:public
+connection::num_packet	nfct.h	/^    unsigned int num_packet;$/;"	m	struct:connection	access:public
+conntrack	nfct.h	/^struct conntrack{$/;"	s
+conntrack::conn_list	nfct.h	/^    struct connection *conn_list;$/;"	m	struct:conntrack	typeref:struct:conntrack::connection	access:public
+conntrack::ct	nfct.h	/^    struct nfct_conntrack *ct ;$/;"	m	struct:conntrack	typeref:struct:conntrack::nfct_conntrack	access:public
+conntrack::cth	nfct.h	/^    struct nfct_handle *cth;$/;"	m	struct:conntrack	typeref:struct:conntrack::nfct_handle	access:public
+conntrack::iden_array	nfct.h	/^    struct identifier *iden_array;$/;"	m	struct:conntrack	typeref:struct:conntrack::identifier	access:public
+conntrack::iden_num	nfct.h	/^    int iden_num;$/;"	m	struct:conntrack	access:public
+conntrack::queuenum	nfct.h	/^    int queuenum;$/;"	m	struct:conntrack	access:public
+ct	nfct.h	/^    struct nfct_conntrack *ct ;$/;"	m	struct:conntrack	typeref:struct:conntrack::nfct_conntrack	access:public
+cth	nfct.h	/^    struct nfct_handle *cth;$/;"	m	struct:conntrack	typeref:struct:conntrack::nfct_handle	access:public
+del_connection	nfct.c	/^int del_connection(struct conntrack * connt, char * key){$/;"	f	signature:(struct conntrack * connt, char * key)
+del_connection	nfct.h	/^int del_connection(struct conntrack * connt, char * key);$/;"	p	signature:(struct conntrack * connt, char * key)
+event_cb	nfct_thread.c	/^static int event_cb(enum nf_conntrack_msg_type type, $/;"	f	file:	signature:(enum nf_conntrack_msg_type type, struct nf_conntrack *ct , void * data)
+event_cb	nfct_thread.h	/^static int event_cb(enum nf_conntrack_msg_type , struct nf_conntrack, void *);$/;"	p	signature:(enum nf_conntrack_msg_type , struct nf_conntrack, void *)
+false	nfct.h	/^enum reverse{false=0,true=1};$/;"	e	enum:reverse
+get_app_data_offset	nfqnl_thread.h	/^int get_app_data_offset(const unsigned char *data);$/;"	p	signature:(const unsigned char *data)
+get_conn_key_of_packet	nfqnl_thread.h	/^int get_conn_key_of_packet(const unsigned char *data,char * buf, enum reverse flag);$/;"	p	signature:(const unsigned char *data,char * buf, enum reverse flag)
+get_connection	nfct.c	/^struct connection * get_connection(struct conntrack * connt, char * key){$/;"	f	signature:(struct conntrack * connt, char * key)
+get_connection	nfct.h	/^struct connection * get_connection(struct conntrack *connt,char *key);$/;"	p	signature:(struct conntrack *connt,char *key)
+handle_packet	nfqnl_thread.c	/^u_int32_t handle_packet(struct nfq_data * tb,$/;"	f	signature:(struct nfq_data * tb, struct nfq_q_handle*qh, struct conntrack * connt)
+handle_packet	nfqnl_thread.h	/^u_int32_t handle_packet(struct nfq_data * tb,$/;"	p	signature:(struct nfq_data * tb, struct nfq_q_handle *qh, struct conntrack * connt)
+hex2dec	identify.c	/^int hex2dec(char c){$/;"	f	signature:(char c)
+hex2dec	identify.h	/^int hex2dec(char c);$/;"	p	signature:(char c)
+iden_array	nfct.h	/^    struct identifier *iden_array;$/;"	m	struct:conntrack	typeref:struct:conntrack::identifier	access:public
+iden_match	identify.c	/^int  iden_match(regex_t * pat , const char * buffer){$/;"	f	signature:(regex_t * pat , const char * buffer)
+iden_match	identify.h	/^int iden_match(regex_t * pat ,const char * buffer);$/;"	p	signature:(regex_t * pat ,const char * buffer)
+iden_num	nfct.h	/^    int iden_num;$/;"	m	struct:conntrack	access:public
+identifier	identify.h	/^struct identifier{$/;"	s
+identifier::mark	identify.h	/^    int mark;\/\/this is the mark as ti appears in the config file $/;"	m	struct:identifier	access:public
+identifier::name	identify.h	/^    char  name[IDEN_NAME_LEN];$/;"	m	struct:identifier	access:public
+identifier::pattern	identify.h	/^    char  pattern[IDEN_PATTERN_LEN];$/;"	m	struct:identifier	access:public
+identifier::preg	identify.h	/^    regex_t preg; \/\/ the compiled regex$/;"	m	struct:identifier	access:public
+increase_pkt_num	nfct.c	/^int increase_pkt_num(struct connection * conn_node){$/;"	f	signature:(struct connection * conn_node)
+increase_pkt_num	nfct.h	/^int increase_pkt_num(struct connection * conn_node);$/;"	p	signature:(struct connection * conn_node)
+insert_connection	nfct.c	/^int insert_connection(struct conntrack * connt , $/;"	f	signature:(struct conntrack * connt , struct connection *conn_node )
+insert_connection	nfct.h	/^int insert_connection(struct conntrack * connt ,$/;"	p	signature:(struct conntrack * connt , struct connection *conn_node)
+key	nfct.h	/^    char key[CONNECTION_KEY_LEN];$/;"	m	struct:connection	access:public
+lengthsofar	nfct.h	/^    unsigned int lengthsofar;$/;"	m	struct:connection	access:public
+main	main.c	/^int main(int argc ,char * agrv []){$/;"	f	signature:(int argc ,char * agrv [])
+make_key	nfct.c	/^int make_key(struct nf_conntrack * ct, char * key,enum reverse flag){$/;"	f	signature:(struct nf_conntrack * ct, char * key,enum reverse flag)
+make_key	nfct.h	/^int  make_key(struct nf_conntrack * ct,char * key,enum reverse); $/;"	p	signature:(struct nf_conntrack * ct,char * key,enum reverse)
+mark	identify.h	/^    int mark;\/\/this is the mark as ti appears in the config file $/;"	m	struct:identifier	access:public
+mark	nfct.h	/^    unsigned int mark;$/;"	m	struct:connection	access:public
+markmask	identify.c	/^unsigned int markmask = 0xffffffff;$/;"	v
+maskfirstbit	identify.c	/^unsigned int maskfirstbit = 0;$/;"	v
+masknbits	identify.c	/^unsigned int masknbits = 32;$/;"	v
+maxpackets	nfqnl_thread.c	/^int maxpackets = 10 ;$/;"	v
+mutex_buffer	nfct.h	/^    pthread_mutex_t mutex_buffer;$/;"	m	struct:connection	access:public
+mutex_num_packet	nfct.h	/^    pthread_mutex_t mutex_num_packet;$/;"	m	struct:connection	access:public
+name	identify.h	/^    char  name[IDEN_NAME_LEN];$/;"	m	struct:identifier	access:public
+new_connection	nfct.c	/^struct connection *  new_connection(){$/;"	f
+new_connection	nfct.h	/^struct connection *  new_connection();$/;"	p	signature:()
+new_conntrack	nfct.c	/^struct conntrack * new_conntrack(){$/;"	f
+new_conntrack	nfct.h	/^struct conntrack * new_conntrack();$/;"	p	signature:()
+new_identifiter	identify.c	/^int  new_identifiter(char * filename,struct identifier ** hook){$/;"	f	signature:(char * filename,struct identifier ** hook)
+new_identifiter	identify.h	/^int new_identifiter(char * filename,struct identifier **hook) ;$/;"	p	signature:(char * filename,struct identifier **hook)
+next	nfct.h	/^    struct connection * next; $/;"	m	struct:connection	typeref:struct:connection::connection	access:public
+nfct_start	nfct_thread.c	/^void nfct_start(void * pconnt){$/;"	f	signature:(void * pconnt)
+nfct_start	nfct_thread.h	/^void nfct_start(void * pconnt);$/;"	p	signature:(void * pconnt)
+nfq_start	nfqnl_thread.h	/^void nfq_start(void * pconnt);$/;"	p	signature:(void * pconnt)
+num_packet	nfct.h	/^    unsigned int num_packet;$/;"	m	struct:connection	access:public
+pattern	identify.h	/^    char  pattern[IDEN_PATTERN_LEN];$/;"	m	struct:identifier	access:public
+pre_process	identify.c	/^char * pre_process(const char *s){$/;"	f	signature:(const char *s)
+pre_process	identify.h	/^char * pre_process(const char *s);$/;"	p	signature:(const char *s)
+preg	identify.h	/^    regex_t preg; \/\/ the compiled regex$/;"	m	struct:identifier	access:public
+queuenum	nfct.h	/^    int queuenum;$/;"	m	struct:conntrack	access:public
+reverse	nfct.h	/^enum reverse{false=0,true=1};$/;"	g
+true	nfct.h	/^enum reverse{false=0,true=1};$/;"	e	enum:reverse
